@@ -46,6 +46,10 @@ def collect_coords():
     return collect_coords()
 
 
+def check_board_outcome():
+    pass
+
+
 def player_turn(symbol, player):
     print(f"Player {player}:")
     coordinate = collect_coords()
