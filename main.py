@@ -14,8 +14,17 @@ board = [[DELIMETER for x in range(BOARD_SIZE)] for y in range(BOARD_SIZE)]
 def display_board():
     print(" " * 5 + f"{' ' * 3}".join(ALPHABET))
     for ind, line in enumerate(board):
-        line = [l for l in line]
-        print(f"{str(ind + 1)} {' ' if ind < 9 else ''}|{'|'.join(line)}|")
+        line_to_show = []
+        for l in line:
+            if "X" in l:
+                line_to_show.append(f"{Color.GREEN}{l}{Color.OFF}")
+
+            elif "O" in l:
+                line_to_show.append(f"{Color.BLUE}{l}{Color.OFF}")
+
+            else:
+                line_to_show.append(l)
+        print(f"{str(ind + 1)} {' ' if ind < 9 else ''}|{'|'.join(line_to_show)}|")
 
     print("\n")
 
